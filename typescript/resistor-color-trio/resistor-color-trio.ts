@@ -13,9 +13,10 @@ const colorValues: ColorsMap = {
 };
 
 export function decodedResistorValue(colors: string[]) {
-  const firstColorValue = colorValues[colors[0]];
-  const secondColorValue = colorValues[colors[1]];
-  const leadingZerosValue = colorValues[colors[2]];
+  const [firstColor, secondColor, thirdColor] = colors;
+  const firstColorValue = colorValues[firstColor];
+  const secondColorValue = colorValues[secondColor];
+  const leadingZerosValue = colorValues[thirdColor];
   const resistorNumberValue = `${firstColorValue}${secondColorValue}${String.prototype.padStart(leadingZerosValue, '0')}`;
   const hasThreeZeros = resistorNumberValue.includes('000');
   const suffix = hasThreeZeros ? 'kiloohms' : 'ohms';
