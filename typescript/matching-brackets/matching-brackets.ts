@@ -1,6 +1,5 @@
 /* eslint-disable no-useless-escape */
-type BracketsMap = { [key: string]: string }
-const bracketsMap: BracketsMap = {
+const bracketsMap: Record<string, string> = {
   ']': '[',
   ')': '(',
   '}': '{',
